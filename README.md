@@ -1,3 +1,1 @@
-TEST - MUSTAFA
-
-# Exercise-Sensor
+# Exercise-Sensor - Testing
