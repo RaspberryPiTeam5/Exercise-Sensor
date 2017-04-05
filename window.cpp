@@ -1,5 +1,5 @@
 #include "window.h"
-#include "adcreader.h"
+#include "ADCreader.h"
 #include <ctime>
 #include <cmath>
 
