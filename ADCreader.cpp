@@ -23,8 +23,7 @@
  
 using namespace std;
  
-int main(void)
-{
+
     mcp3008Spi a2d("/dev/spidev0.0", SPI_MODE_0, 1000000, 8);
     int i = 20;
  //channel 0
@@ -40,8 +39,11 @@ int main(void)
     int a2dChannel2 = 0;
         unsigned char data2[3];
  
-    while(i > 0)
-    {
+  void ADCreader::run()
+{
+	running = true;
+	while (running)
+{
      //channel 0
         data0[0] = 1;  //  first byte transmitted -> start bit
         data0[1] = 0b10000000 |( ((a2dChannel0 & 7) << 4)); // second byte transmitted -> (SGL/DIF = 1, D2=D1=D0=0)
@@ -80,11 +82,20 @@ int main(void)
                 a2dVal2 |=  (data2[2] & 0xff);
      
      
-        sleep(1);
-        cout << "Temperature is: " << a2dVal0 << endl;
-        cout << "Temperature is: " << a2dVal1 << endl;
-        cout << "Temperature is: " << a2dVal2 << endl;
-        i--;
-    }
-    return 0;
+   //quit function - stops infinite loop
+void ADCreader::quit()
+{
+	running = false;
+	exit(0);
+}
+
+//getData() extracts data from infinite loop when called
+int ADCreader::ourData()
+{
+  output0 = a2dVal0;
+ output1 = a2dval1
+  output2 = a2dval2
+  return output0;
+ return output1
+  return output2
 }
