@@ -89,7 +89,7 @@ void ADCreader::quit()
 	exit(0);
 }
 
-//gData() extracts data from infinite loop when called
+//Data() extracts data from infinite loop when called
 int ADCreader::Data0()
 {
   output0 = a2dVal0;
