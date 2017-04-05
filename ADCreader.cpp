@@ -97,11 +97,11 @@ int ADCreader::Data0()
 }
 int ADCreader::Data1()
 {
- output1 = a2dval1
- return output1
+ output1 = a2dval1;
+ return output1;
 }
 int ADCreader::Data2()
 {
-  output2 = a2dval2
-  return output2
+  output2 = a2dval2;
+  return output2;
 }
