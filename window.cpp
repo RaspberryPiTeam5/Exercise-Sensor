@@ -59,7 +59,9 @@ Window::~Window() {
 
 void Window::timerEvent( QTimerEvent * )
 {
-
+double inVal0 = adcreader->Data0()
+double inVal1 =  adcreader->Data1()
+double inVal2 =  adcreader->Data2()
 
 // add the new input to the plot
 	memmove( yData0, yData0+1, (plotDataSize-1) * sizeof(double) );
