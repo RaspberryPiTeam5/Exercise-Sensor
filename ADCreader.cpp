@@ -90,12 +90,18 @@ void ADCreader::quit()
 }
 
 //getData() extracts data from infinite loop when called
-int ADCreader::ourData()
+int ADCreader::Data0()
 {
   output0 = a2dVal0;
+   return output0;
+}
+int ADCreader::Data1()
+{
  output1 = a2dval1
-  output2 = a2dval2
-  return output0;
  return output1
+}
+int ADCreader::Data2()
+{
+  output2 = a2dval2
   return output2
 }
