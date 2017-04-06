@@ -34,10 +34,10 @@ Window::Window()
         curve1->attach(plot1);
         curve2->attach(plot2);
 
-        plot0->setAxisTitle(QwtPlot::xBottom, "Temperature (°C)");
-        plot0->setAxisTitle(QwtPlot::yLeft, "Time (x10ms)");
-        plot1->setAxisTitle(QwtPlot::xBottom, "Voltage (mv)");
-        plot1->setAxisTitle(QwtPlot::yLeft, "Time (x10ms)");
+        plot0->setAxisTitle(QwtPlot::xBottom, "Time (x10ms)");
+        plot0->setAxisTitle(QwtPlot::yLeft, "Temperature (°C)");
+        plot1->setAxisTitle(QwtPlot::xBottom, "Time (x10ms)");
+        plot1->setAxisTitle(QwtPlot::yLeft, "Voltage (mv)");
         plot2->setAxisTitle(QwtPlot::xBottom, "Time (x10ms)");
         plot2->setAxisTitle(QwtPlot::yLeft, "Moisture (units)");
 
