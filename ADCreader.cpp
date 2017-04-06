@@ -30,6 +30,8 @@ using namespace std;
         int a2dVal0 = 0;
     int a2dChannel0 = 0;
         unsigned char data0[3];
+float  voltage=0;
+float Resistance=0;
  //channel 1                                                                                                                                   
     int a2dVal1 = 0;
     int a2dChannel1 = 0;
@@ -64,6 +66,8 @@ using namespace std;
         a2dVal0 = 0;
                 a2dVal0 = (data0[1]<< 8) & 0b1100000000; //merge data[1] & data[2] to get result                                               
                 a2dVal0 |=  (data0[2] & 0xff);
+                voltage = (a2dVal0*3.3)/float(1023);
+		        Resistance= -(voltage*33000)/(voltage-3.3);
 
       //channel 1                                                                                                                              
         a2d.spiWriteRead(data1, sizeof(data1) );
@@ -91,7 +95,7 @@ void ADCreader::quit()
 //Data() extracts data from infinite loop when called                                                                                          
 int ADCreader::Data0()
 {
-  output0 = a2dVal0;
+  output0=(((2.8671e-8)*Resistance*Resistance)-((2.2881e-3)*Resistance)+float(70.274));
    return output0;
 }
 int ADCreader::Data1()
