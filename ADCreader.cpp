@@ -30,16 +30,19 @@ using namespace std;
         int a2dVal0 = 0;
     int a2dChannel0 = 0;
         unsigned char data0[3];
-float  voltage=0;
+float  voltage0=0;
 float Resistance=0;
  //channel 1                                                                                                                                   
     int a2dVal1 = 0;
     int a2dChannel1 = 0;
         unsigned char data1[3];
+float voltage1=0;
+
  //channel 2                                                                                                                                   
  int a2dVal2 = 0;
     int a2dChannel2 = 0;
         unsigned char data2[3];
+float voltage2=0;
 
   void ADCreader::run()
 {
@@ -66,8 +69,8 @@ float Resistance=0;
         a2dVal0 = 0;
                 a2dVal0 = (data0[1]<< 8) & 0b1100000000; //merge data[1] & data[2] to get result                                               
                 a2dVal0 |=  (data0[2] & 0xff);
-                voltage = (a2dVal0*3.3)/float(1023);
-		        Resistance= -(voltage*33000)/(voltage-3.3);
+                voltage0 = (a2dVal0*3.3)/float(1023);
+		Resistance= -(voltage0*33000)/(voltage0-3.3);
 
       //channel 1                                                                                                                              
         a2d.spiWriteRead(data1, sizeof(data1) );
@@ -75,6 +78,7 @@ float Resistance=0;
         a2dVal1 = 0;
                 a2dVal1 = (data1[1]<< 8) & 0b1100100000; //merge data[1] & data[2] to get result                                               
                 a2dVal1 |=  (data1[2] & 0xff);
+	        voltage1 =((a2dVal1*3.3)/float(1023))*1000;
 
        //channel 2                                                                                                                             
         a2d.spiWriteRead(data2, sizeof(data2) );
@@ -82,6 +86,8 @@ float Resistance=0;
         a2dVal2 = 0;
                 a2dVal2 = (data2[1]<< 8) & 0b1101000000; //merge data[1] & data[2] to get result                                               
                 a2dVal2 |=  (data2[2] & 0xff);
+	        voltage2 =(a2dVal2*3.3)/float(1023);
+
  }
 }
 
@@ -100,12 +106,12 @@ int ADCreader::Data0()
 }
 int ADCreader::Data1()
 {
- output1 = a2dVal1;
+ output1 = voltage1;
  return output1;
 }
 int ADCreader::Data2()
 {
-  output2 = a2dVal2;
+  output2 = ((-1*(voltage2-3.3)/3.3)*100)-15;
   return output2;
 }
 
