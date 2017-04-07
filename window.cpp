@@ -34,7 +34,7 @@ Window::Window()
         curve1->attach(plot1);
         curve2->attach(plot2);
 
-        plot0->setAxisTitle(QwtPlot::yLeft, "Temperature (°C)");
+        plot0->setAxisTitle(QwtPlot::yLeft, "Temperature (degrees)");
       
         plot1->setAxisTitle(QwtPlot::yLeft, "Voltage (mv)");
       ;
@@ -79,7 +79,7 @@ void Window::timerEvent( QTimerEvent * )
 	yData0[plotDataSize-1] = inVal0;
         curve0->setSamples(xData, yData0, plotDataSize);
         
-        plot0->setAxisTitle(QwtPlot::yLeft, "Temperature (°C)");
+        plot0->setAxisTitle(QwtPlot::yLeft, "Temperature (degrees)");
         plot0->replot();
 
 memmove( yData1, yData1+1, (plotDataSize-1) * sizeof(double) );
@@ -93,7 +93,7 @@ memmove( yData2, yData2+1, (plotDataSize-1) * sizeof(double) );
         yData2[plotDataSize-1] = inVal2;
         curve2->setSamples(xData, yData2, plotDataSize);
        
-        plot2->setAxisTitle(QwtPlot::yLeft, "Moisture (units)");
+        plot2->setAxisTitle(QwtPlot::yLeft, "Moisture (% change)");
         plot2->replot();
 
 }
