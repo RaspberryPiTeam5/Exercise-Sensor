@@ -99,17 +99,17 @@ void ADCreader::quit()
 }
 
 //Data() extracts data from infinite loop when called                                                                                          
-int ADCreader::Data0()
+float ADCreader::Data0()
 {
   output0=(((2.8671e-8)*Resistance*Resistance)-((2.2881e-3)*Resistance)+float(70.274));
    return output0;
 }
-int ADCreader::Data1()
+float ADCreader::Data1()
 {
  output1 = voltage1;
  return output1;
 }
-int ADCreader::Data2()
+float ADCreader::Data2()
 {
   output2 = ((-1*(voltage2-3.3)/3.3)*100)-15;
   return output2;
