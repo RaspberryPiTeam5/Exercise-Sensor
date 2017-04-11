@@ -69,7 +69,6 @@ private:
         ADCreader *adcreader;
 
 
-        ADCreader *adcreader;
 
 
 };
