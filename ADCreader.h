@@ -10,16 +10,16 @@ public:
         ADCreader() {running = 0;};
         void quit();
         void run();
-        int Data0();
-        int Data1();
-        int Data2();
+        float Data0();
+        float Data1();
+        float Data2();
 
 private:
 
         bool running;
-        int output0;
-        int output1;
-        int output2;
+        float output0;
+        float output1;
+        float output2;
 
 };
 
