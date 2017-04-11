@@ -1,5 +1,20 @@
-This github is the software for a temperature sensor, pulse sensor and a moisture sensor for a raspberry pi project. The software requires the download of the qt4 and qwt libraries.
+This repository was created for a project using the raspberry pi. Files included are a schematic of the PCB used in conjunction with the pi along with the necessary files to run a GUI to plot outputs.
+Sensors used include:
+    1- Temperature Sensor
+    2- Moisture/Sweat Sensor
+    3- Pulse/Heart Rate Sensor
 
-To run the software, you should clone this git repository, build with "qmake", then build with "make" and finally run with "startx ./Exercise" (assuming no X is running whilst on an SSH.
+The software requires the download of the qt4 and qwt libraries inclusing:
+   - qt4-dev-tools
+   - ibqt4-dev
+   - libqwt-dev
 
 
+To run the software:
+    1- Clone the repository onto your pi with the following link: https://github.com/RaspberryPiTeam5/Exercise-Sensor
+    2- build with the command "qmake" followed by "make"
+    3- Run the program with "startx ./Exercise" (assuming no X is running whilst on an SSH.
+    
+If you require any assistance with regards to this project, please contact either:
+        XXXX
+        XXXX
