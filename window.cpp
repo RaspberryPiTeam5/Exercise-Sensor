@@ -27,7 +27,7 @@ Window::Window():normtemp(0), gain(5), moistlev(0)
                 yData22[index]=moistlev;
 
         }
-// Channel 0,1 and 2 plot                                                                                                                              
+// Channel 0,1 and 2 curves                                                                                                                            
         curve0 = new QwtPlotCurve;
         curve0->setPen(QPen(Qt::green,2));
         curve00 = new QwtPlotCurve;
@@ -38,11 +38,12 @@ Window::Window():normtemp(0), gain(5), moistlev(0)
         curve22= new QwtPlotCurve;
         curve22->setPen(QPen(Qt::blue,2));
 
-
+// Channel 0,1 and 2 plots
         plot0 = new QwtPlot;
         plot1 = new QwtPlot;
         plot2 = new QwtPlot;
 	
+	// buttons for plots
 	button0=new QPushButton("skin temp");
         button00=new QPushButton("zero temp");
         button2=new QPushButton("Very Sweaty");
@@ -50,7 +51,7 @@ Window::Window():normtemp(0), gain(5), moistlev(0)
 
 
         Label= new QLabel(this);
-	
+	 //connecting buttons to intended purpose
 	connect( button0, SIGNAL(clicked()), SLOT(tempnorm()) );
         connect( button00, SIGNAL(clicked()), SLOT(temp0()) );
         connect( button2, SIGNAL(clicked()), SLOT(sweaty()) );
@@ -116,6 +117,7 @@ Window::~Window() {
 
 void Window::timerEvent( QTimerEvent * )
 {
+	//reading data from the ADC
    double inVal0 =  adcreader->Data0();
   double inVal00= normtemp;
   double inVal1 =  gain*(adcreader->Data1());
