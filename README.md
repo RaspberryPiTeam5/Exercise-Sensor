@@ -16,5 +16,7 @@ To run the software:
 3- Run the program with "startx ./Exercise" (assuming no X is running whilst on an SSH).  
     
 If you require any assistance with regards to this project, please contact either:  
+
 Mustafa Miyasar - 2015221M@student.glasgow.ac.uk  
 Roheel Arshad - 2018987A@student.glasgow.ac.uk
+ x
