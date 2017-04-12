@@ -44,10 +44,10 @@ Window::Window():normtemp(0), gain(5), moistlev(0)
         plot2 = new QwtPlot;
 	
 	// buttons for plots
-	button0=new QPushButton("skin temp");
-        button00=new QPushButton("zero temp");
-        button2=new QPushButton("Very Sweaty");
-        button22=new QPushButton("Very Dry");
+	button0=new QPushButton("Normal Skin Temperature");
+        button00=new QPushButton("Zero Tempterature");
+        button2=new QPushButton("Skin Moisture After Prespiration");
+        button22=new QPushButton("Normal Skin Moisture");
 
 
         Label= new QLabel(this);
