@@ -118,11 +118,11 @@ Window::~Window() {
 void Window::timerEvent( QTimerEvent * )
 {
 	//reading data from the ADC
-   double inVal0 =  adcreader->Data0();
-  double inVal00= normtemp;
-  double inVal1 =  gain*(adcreader->Data1());
- double inVal2 =  adcreader->Data2();
- double inVal22=moistlev;
+   float inVal0 =  adcreader->Data0();
+  int inVal00= normtemp;
+  float inVal1 =  gain*(adcreader->Data1());
+ float inVal2 =  adcreader->Data2();
+ int inVal22=moistlev;
 
 
 // add the new input to the plot                                                                                                               
