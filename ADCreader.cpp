@@ -69,8 +69,8 @@ float voltage2=0;
         a2dVal0 = 0;
                 a2dVal0 = (data0[1]<< 8) & 0b1100000000; //merge data[1] & data[2] to get result                                               
                 a2dVal0 |=  (data0[2] & 0xff);
-                voltage0 = (a2dVal0*3.3)/float(1023);
-		Resistance= -(voltage0*33000)/(voltage0-3.3);
+                voltage0 = (a2dVal0*3.3)/float(1023); //convert from digital output to voltage
+		Resistance= -(voltage0*33000)/(voltage0-3.3); //convert to resistance 
 
       //channel 1                                                                                                                              
         a2d.spiWriteRead(data1, sizeof(data1) );
@@ -78,7 +78,7 @@ float voltage2=0;
         a2dVal1 = 0;
                 a2dVal1 = (data1[1]<< 8) & 0b1100100000; //merge data[1] & data[2] to get result                                               
                 a2dVal1 |=  (data1[2] & 0xff);
-	        voltage1 =((a2dVal1*3.3)/float(1023))*1000;
+	        voltage1 =((a2dVal1*3.3)/float(1023))*1000; //convert from digital output to milivolts
 
        //channel 2                                                                                                                             
         a2d.spiWriteRead(data2, sizeof(data2) );
@@ -86,7 +86,7 @@ float voltage2=0;
         a2dVal2 = 0;
                 a2dVal2 = (data2[1]<< 8) & 0b1101000000; //merge data[1] & data[2] to get result                                               
                 a2dVal2 |=  (data2[2] & 0xff);
-	        voltage2 =(a2dVal2*3.3)/float(1023);
+	        voltage2 =(a2dVal2*3.3)/float(1023); //convert from digital output to voltage
 
  }
 }
@@ -101,7 +101,7 @@ void ADCreader::quit()
 //Data() extracts data from infinite loop when called                                                                                          
 float ADCreader::Data0()
 {
-  output0=(((2.8671e-8)*Resistance*Resistance)-((2.2881e-3)*Resistance)+float(70.274));
+  output0=(((2.8671e-8)*Resistance*Resistance)-((2.2881e-3)*Resistance)+float(70.274)); //converting to temperature in degree celsius for the thermistor
    return output0;
 }
 float ADCreader::Data1()
@@ -111,7 +111,7 @@ float ADCreader::Data1()
 }
 float ADCreader::Data2()
 {
-  output2 = ((-1*(voltage2-3.3)/3.3)*100)-15;
+  output2 = ((-1*(voltage2-3.3)/3.3)*100)-15; // converting to a percentage change 
   return output2;
 }
 
