@@ -63,6 +63,7 @@ private:
         double yData2[plotDataSize];
         double yData22[plotDataSize];
         
+        // variables used for pushbutton and knob
         double gain;
         int normtemp;
         int moistlev;
