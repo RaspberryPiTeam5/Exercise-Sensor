@@ -1,12 +1,12 @@
-This repository was created for a project using the raspberry pi. Files included are a schematic of the PCB used in conjunction with the pi along with the necessary files to run a GUI to plot outputs.  
+This repository was created for a project using the raspberry pi. Files included are a schematic of the PCB used in conjunction with the pi along with the necessary files to run a GUI to plot outputs.  
 Sensors used include:  
-1- Temperature Sensor  
-2- Moisture/Sweat Sensor  
+1- Temperature Sensor  
+2- Moisture/Sweat Sensor  
 3- Pulse/Heart Rate Sensor  
 
 The software requires the download of the qt4 and qwt libraries inclusing:
-   - qt4-dev-tools
-   - ibqt4-dev
+   - qt4-dev-tools
+   - libqt4-dev
    - libqwt-dev
 
 
