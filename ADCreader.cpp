@@ -111,7 +111,7 @@ float ADCreader::Data1()
 }
 float ADCreader::Data2()
 {
-  output2 = ((-1*(voltage2-3.3)/3.3)*100)-15; // converting to a percentage change 
+  output2 = ((-1*(voltage2-3.3)/3.3)*100); // converting to a percentage change 
   return output2;
 }
 
